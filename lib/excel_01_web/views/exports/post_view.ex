@@ -37,12 +37,37 @@ defmodule Excel01Web.Exports.PostView do
       # %Workbook{sheets: [%Sheet{name: "Posts2", rows: [@header] ++ rows}]}
     end
   def row(post) do
-      [
-        post.id,
-        post.name,
-        post.title,
-        post.content
-      ]
+    test = [
+      post.id,
+      post.name,
+      post.title,
+      post.content
+    ]
+
+    num = [
+      "1",
+      "2",
+      "3",
+      "ok"
+      | Enum.map(test, fn(s) -> s end)
+    ]
+
+
+    IO.inspect test
+    IO.inspect num
+    IO.inspect [test | num]
+    # list_rec =
+    #   for item <- post do
+    #     Ecto.embedded_dump(item, :json)
+    #   end
+    # IO.inspect list_rec
+    #Enum.map(list_rec, fn(s) -> s  end)
+    # [
+    #   post.id,
+    #   post.name,
+    #   post.title,
+    #   post.content
+    # ]
   end
 
   defp month_rows(current_date) do
