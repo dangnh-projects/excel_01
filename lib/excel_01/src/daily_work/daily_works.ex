@@ -5,6 +5,7 @@ defmodule Excel01.Src.DaiLyWork.DailyWorks do
 
   def get_daily_work do
     DailyWork
+    |> order_by([e], [desc: e.work_date])
     |> RepoWorkDays.all
   end
 

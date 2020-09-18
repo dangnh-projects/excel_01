@@ -9,8 +9,6 @@
       <th>Work Date</th>
       <th>Min Time</th>
       <th>Max Time</th>
-      <th>Reader In</th>
-      <th>Reader Out</th>
 
       <th></th>
     </tr>
@@ -21,11 +19,9 @@
         <td><%= daily.user_id %></td>
         <td><%= daily.user_name %></td>
         <td><%= daily.mail %></td>
-        <td><%= daily.work_date %></td>
-        <td><%= daily.min_time %></td>
-        <td><%= daily.max_time %></td>
-        <td><%= daily.reader_in %></td>
-        <td><%= daily.reader_out %></td>
+        <td><%= Timex.format!(Timex.from_unix(daily.work_date), "%d/%m/%Y", :strftime) %></td>
+        <td><%= if is_integer(daily.min_time), do: Timex.format!(Timex.from_unix(daily.min_time), "%I:%M %p", :strftime) %></td>
+        <td><%= if is_integer(daily.max_time), do: Timex.format!(Timex.from_unix(daily.max_time), "%I:%M %p", :strftime) %></td>
 
         <td>
         </td>
