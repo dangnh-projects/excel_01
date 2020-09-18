@@ -5,8 +5,17 @@ defmodule Excel01.Src.DaiLyWork.DailyWorks do
 
   def get_daily_work do
     DailyWork
+    |> where([e], (1600387200 - 86400 - 86401) < e.work_date and e.work_date < 1600387201)
     |> order_by([e], [desc: e.work_date])
     |> RepoWorkDays.all
+  end
+
+  def get_daily_work_by_id_date(id, date) do
+    DailyWork
+    |> where([e], e.user_id == ^id and e.work_date == ^date)
+    |> where([e], (1600387200 - 86400 - 86401) < e.work_date and e.work_date < 1600387201)
+    |> order_by([e], [desc: e.work_date])
+    |> RepoWorkDays.one
   end
 
   def daily_work_last do

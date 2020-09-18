@@ -6,7 +6,7 @@ defmodule Excel01.Src.Employee.Employees do
   def list_all_employees do
     Employee
     |> where([e], e.status_actived == true)
-    |> where([e], e.nDepartmentIdn == 1)
+    |> where([e], e.nDepartmentIdn == 1 and e.manager_role == true)
     |> order_by([e], [asc: e.nUserIdn])
     |> RepoWorkDays.all()
   end
