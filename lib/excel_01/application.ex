@@ -9,6 +9,8 @@ defmodule Excel01.Application do
     children = [
       # Start the Ecto repository
       Excel01.Repo,
+      # Start the Ecto repository
+      Excel01.RepoWorkDays,
       # Start the Telemetry supervisor
       Excel01Web.Telemetry,
       # Start the PubSub system

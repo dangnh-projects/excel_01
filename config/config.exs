@@ -8,7 +8,7 @@
 use Mix.Config
 
 config :excel_01,
-  ecto_repos: [Excel01.Repo]
+  ecto_repos: [Excel01.Repo, Excel01.RepoWorkDays]
 
 # Configures the endpoint
 config :excel_01, Excel01Web.Endpoint,

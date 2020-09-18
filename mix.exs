@@ -45,7 +45,8 @@ defmodule Excel01.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:elixlsx, "~> 0.4.2"}
+      {:elixlsx, "~> 0.4.2"},
+      {:timex, "~> 3.6"},
     ]
   end
 

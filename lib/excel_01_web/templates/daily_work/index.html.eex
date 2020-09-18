@@ -1,0 +1,35 @@
+<h1>Listing Daily</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Mail</th>
+      <th>Work Date</th>
+      <th>Min Time</th>
+      <th>Max Time</th>
+      <th>Reader In</th>
+      <th>Reader Out</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for daily <- @daily_works do %>
+        <tr>
+        <td><%= daily.user_id %></td>
+        <td><%= daily.user_name %></td>
+        <td><%= daily.mail %></td>
+        <td><%= daily.work_date %></td>
+        <td><%= daily.min_time %></td>
+        <td><%= daily.max_time %></td>
+        <td><%= daily.reader_in %></td>
+        <td><%= daily.reader_out %></td>
+
+        <td>
+        </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

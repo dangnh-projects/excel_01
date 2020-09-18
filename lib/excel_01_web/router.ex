@@ -18,6 +18,12 @@ defmodule Excel01Web.Router do
 
     get "/", PageController, :index
     resources "/posts", PostController
+
+    # Employees
+    get "/employees", EmployeeController, :index
+
+    # DailyWorks
+    get "/daily_works", DailyWorkController, :index
   end
 
   scope "/exports", as: :exports, alias: Excel01Web.Exports do
