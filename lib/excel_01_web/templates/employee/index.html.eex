@@ -1,0 +1,35 @@
+<h1>Listing Employee</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Department</th>
+      <th>Telnumber</th>
+      <th>Email</th>
+      <th>Send Mail</th>
+      <th>Actived</th>
+      <th>Manager</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for employee <- @employees do %>
+        <tr>
+        <td><%= employee.sUserID %></td>
+        <td><%= employee.sUserName %></td>
+        <td><%= employee.nDepartmentIdn %></td>
+        <td><%= employee.sTelNumber %></td>
+        <td><%= employee.sEmail %></td>
+        <td><%= employee.send_mail %></td>
+        <td><%= employee.status_actived %></td>
+        <td><%= employee.manager_role %></td>
+
+        <td>
+        </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
