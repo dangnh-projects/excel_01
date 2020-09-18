@@ -16,7 +16,7 @@ defmodule Excel01Web.PostController do
 
   def create(conn, %{"post" => post_params}) do
     case Posters.create_post(post_params) do
-      {:ok, post} ->
+      {:ok, _} ->
         conn
         |> put_flash(:info, "Post created successfully.")
         #|> redirect(to: Routes.post_path(conn, :show, post))
