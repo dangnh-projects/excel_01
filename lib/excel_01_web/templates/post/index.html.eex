@@ -4,7 +4,15 @@
 
     <%= link "Export XLSX", to: Routes.exports_post_path(@conn, :index), class: "btn btn-default" %>
 
+
 </ul>
+
+<%= form_for @conn, Routes.exports_post_path(@conn, :index), [method: "get"], fn f -> %>
+  <%= datetime_select f, :born_at, builder: fn b -> %>
+  Month / Year: <%= b.(:month, []) %> / <%= b.(:year, []) %>
+<% end %>
+  <%= submit "Export XLSX" %>
+<% end %>
 
 <table>
   <thead>
